@@ -32,6 +32,10 @@ type V5WebsocketPrivateServiceI interface {
 	SubscribeWallet(
 		func(V5WebsocketPrivateWalletResponse) error,
 	) (func() error, error)
+
+	SubscribeExecution(
+		func(V5WebsocketPrivateExecutionResponse) error,
+	) (func() error, error)
 }
 
 // V5WebsocketPrivateService :
