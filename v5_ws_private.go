@@ -41,9 +41,10 @@ type V5WebsocketPrivateService struct {
 
 	mu sync.Mutex
 
-	paramOrderMap    map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivateOrderResponse) error
-	paramPositionMap map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivatePositionResponse) error
-	paramWalletMap   map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivateWalletResponse) error
+	paramOrderMap     map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivateOrderResponse) error
+	paramPositionMap  map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivatePositionResponse) error
+	paramWalletMap    map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivateWalletResponse) error
+	paramExecutionMap map[V5WebsocketPrivateParamKey]func(V5WebsocketPrivateExecutionResponse) error
 }
 
 const (
@@ -66,6 +67,9 @@ const (
 
 	// V5WebsocketPrivateTopicWallet :
 	V5WebsocketPrivateTopicWallet V5WebsocketPrivateTopic = "wallet"
+
+	// V5WebsocketPrivateTopicExecution :
+	V5WebsocketPrivateTopicExecution V5WebsocketPrivateTopic = "execution"
 )
 
 // V5WebsocketPrivateParamKey :
@@ -215,6 +219,18 @@ func (s *V5WebsocketPrivateService) Run() error {
 			return err
 		}
 		f, err := s.retrieveWalletFunc(resp.Key())
+		if err != nil {
+			return err
+		}
+		if err := f(resp); err != nil {
+			return err
+		}
+	case V5WebsocketPrivateTopicExecution:
+		var resp V5WebsocketPrivateExecutionResponse
+		if err := s.parseResponse(message, &resp); err != nil {
+			return err
+		}
+		f, err := s.retrieveExecutionFunc(resp.Key())
 		if err != nil {
 			return err
 		}

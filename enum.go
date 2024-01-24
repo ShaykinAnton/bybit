@@ -195,14 +195,14 @@ const (
 type ExecType string
 
 const (
-	// ExecTypeTrade :
+	// ExecTypeV5Trade :
 	ExecTypeTrade = ExecType("Trade")
-	// ExecTypeAdlTrade :
-	ExecTypeAdlTrade = ExecType("AdlTrade")
-	// ExecTypeFunding :
-	ExecTypeFunding = ExecType("Funding")
 	// ExecTypeBustTrade :
 	ExecTypeBustTrade = ExecType("BustTrade")
+	// ExecTypeSessionSettlePnL :
+	ExecTypeSessionSettlePnL = ExecType("SessionSettlePnL")
+	// ExecTypeSettle :
+	ExecTypeSettle = ExecType("Settle")
 )
 
 // Direction :

@@ -309,23 +309,23 @@ type V5GetClosedPnLList []V5GetClosedPnLItem
 
 // V5GetClosedPnLItem :
 type V5GetClosedPnLItem struct {
-	Symbol        SymbolV5   `json:"symbol"`
-	OrderID       string     `json:"orderId"`
-	Side          Side       `json:"side"`
-	Qty           string     `json:"qty"`
-	OrderPrice    string     `json:"orderPrice"`
-	OrderType     OrderType  `json:"orderType"`
-	ExecType      ExecTypeV5 `json:"execType"`
-	ClosedSize    string     `json:"closedSize"`
-	CumEntryValue string     `json:"cumEntryValue"`
-	AvgEntryPrice string     `json:"avgEntryPrice"`
-	CumExitValue  string     `json:"cumExitValue"`
-	AvgExitPrice  string     `json:"avgExitPrice"`
-	ClosedPnl     string     `json:"closedPnl"`
-	FillCount     string     `json:"fillCount"`
-	Leverage      string     `json:"leverage"`
-	CreatedTime   string     `json:"createdTime"`
-	UpdatedTime   string     `json:"updatedTime"`
+	Symbol        SymbolV5  `json:"symbol"`
+	OrderID       string    `json:"orderId"`
+	Side          Side      `json:"side"`
+	Qty           string    `json:"qty"`
+	OrderPrice    string    `json:"orderPrice"`
+	OrderType     OrderType `json:"orderType"`
+	ExecType      ExecType  `json:"execType"`
+	ClosedSize    string    `json:"closedSize"`
+	CumEntryValue string    `json:"cumEntryValue"`
+	AvgEntryPrice string    `json:"avgEntryPrice"`
+	CumExitValue  string    `json:"cumExitValue"`
+	AvgExitPrice  string    `json:"avgExitPrice"`
+	ClosedPnl     string    `json:"closedPnl"`
+	FillCount     string    `json:"fillCount"`
+	Leverage      string    `json:"leverage"`
+	CreatedTime   string    `json:"createdTime"`
+	UpdatedTime   string    `json:"updatedTime"`
 }
 
 // GetClosedPnL :

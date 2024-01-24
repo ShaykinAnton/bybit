@@ -187,14 +187,20 @@ const (
 type ExecTypeV5 string
 
 const (
-	// ExecTypeV5Trade :
+	// ExecTypeTrade :
 	ExecTypeV5Trade = ExecTypeV5("Trade")
-	// ExecTypeV5BustTrade :
+	// ExecTypeAdlTrade :
+	ExecTypeV5AdlTrade = ExecTypeV5("AdlTrade")
+	// ExecTypeFunding :
+	ExecTypeV5Funding = ExecTypeV5("Funding")
+	// ExecTypeBustTrade :
 	ExecTypeV5BustTrade = ExecTypeV5("BustTrade")
-	// ExecTypeV5SessionSettlePnL :
-	ExecTypeV5SessionSettlePnL = ExecTypeV5("SessionSettlePnL")
-	// ExecTypeV5Settle :
-	ExecTypeV5Settle = ExecTypeV5("Settle")
+	// ExecTypeBlockTrade :
+	ExecTypeV5BlockTrade = ExecTypeV5("BlockTrade")
+	// ExecTypeMovePosition :
+	ExecTypeV5MovePosition = ExecTypeV5("MovePosition")
+	// ExecTypeUNKNOWN :
+	ExecTypeV5UNKNOWN = ExecTypeV5("ExecType")
 )
 
 // TransferStatusV5 :
