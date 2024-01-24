@@ -1,6 +1,6 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/hirokisan/bybit)](https://goreportcard.com/report/github.com/hirokisan/bybit)
-[![golangci-lint](https://github.com/hirokisan/bybit/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/hirokisan/bybit/actions/workflows/golangci-lint.yml)
-[![test](https://github.com/hirokisan/bybit/actions/workflows/test.yml/badge.svg)](https://github.com/hirokisan/bybit/actions/workflows/test.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/shaykinanton/bybit)](https://goreportcard.com/report/github.com/shaykinanton/bybit)
+[![golangci-lint](https://github.com/shaykinanton/bybit/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/shaykinanton/bybit/actions/workflows/golangci-lint.yml)
+[![test](https://github.com/shaykinanton/bybit/actions/workflows/test.yml/badge.svg)](https://github.com/shaykinanton/bybit/actions/workflows/test.yml)
 
 # bybit
 
@@ -11,7 +11,7 @@ bybit is an bybit client for the Go programming language.
 ### REST API
 
 ```golang
-import "github.com/hirokisan/bybit/v2"
+import "github.com/shaykinanton/bybit/v2"
 
 client := bybit.NewClient().WithAuth("your api key", "your api secret")
 res, err := client.Future().InversePerpetual().Balance(bybit.CoinBTC)
@@ -22,7 +22,7 @@ res, err := client.Future().InversePerpetual().Balance(bybit.CoinBTC)
 
 for single use
 ```golang
-import "github.com/hirokisan/bybit/v2"
+import "github.com/shaykinanton/bybit/v2"
 
 wsClient := bybit.NewWebsocketClient()
 svc, err := wsClient.Spot().V1().PublicV1()
@@ -40,7 +40,7 @@ svc.Start(context.Background())
 
 for multiple use
 ```golang
-import "github.com/hirokisan/bybit/v2"
+import "github.com/shaykinanton/bybit/v2"
 
 wsClient := bybit.NewWebsocketClient()
 
@@ -79,7 +79,7 @@ wsClient.Start(context.Background(), executors)
 
 V5 usage
 ```golang
-import "github.com/hirokisan/bybit/v2"
+import "github.com/shaykinanton/bybit/v2"
 
 wsClient := bybit.NewWebsocketClient().WithBaseURL("wss://stream-testnet.bybit.com").WithAuth("key", "secret")
 svc, err := wsClient.V5().Private()
@@ -380,6 +380,6 @@ See below
 
 ## Contributing
 
-I would like to cover Bybit API and contributions are always welcome. The calling pattern is established, so adding new methods is relatively straightforward. See some PRs like https://github.com/hirokisan/bybit/pull/44.
+I would like to cover Bybit API and contributions are always welcome. The calling pattern is established, so adding new methods is relatively straightforward. See some PRs like https://github.com/shaykinanton/bybit/pull/44.
 
 To submit issues, PRs, and every other help is welcome.
